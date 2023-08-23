@@ -16,9 +16,8 @@ jobs:
       - name: Build and push Docker image
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_TOKEN }}  # Use DOCKER_TOKEN secret
         run: |
-          docker build -t your-dockerhub-username/html-project:latest .
+          docker build -t samrachdx/html-project:latest .
           docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-          docker push samrachdx/html-project:tagname
-
+          docker push samrachdx/html-project:latest
