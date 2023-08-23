@@ -18,5 +18,5 @@ jobs:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         run: |
           docker build -t samrachdx/html-project:latest .
-          echo ${{ secrets.html_project }} | docker login -u $DOCKER_USERNAME --password-stdin
+          docker login -u $DOCKER_USERNAME -p ${{ secrets.html_project }}
           docker push samrachdx/html-project:latest
