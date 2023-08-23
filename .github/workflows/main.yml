@@ -20,4 +20,5 @@ jobs:
         run: |
           docker build -t your-dockerhub-username/html-project:latest .
           docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-          docker push your-dockerhub-username/html-project:latest
+          docker push samrachdx/html-project:tagname
+
